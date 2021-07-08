@@ -1,0 +1,25 @@
+{
+  "name": "weatherapplication-node",
+  "version": "1.0.0",
+  "description": "Wheather Application node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hariomgola/weatherApplication-node.js.git"
+  },
+  "author": "hariom gola",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hariomgola/weatherApplication-node.js/issues"
+  },
+  "homepage": "https://github.com/hariomgola/weatherApplication-node.js#readme",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "request": "^2.88.2",
+    "yargs": "^17.0.1"
+  }
+}
