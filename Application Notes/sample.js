@@ -86,3 +86,51 @@ let callback = (/*parameter to pass it may be 2/3 depends on consition or usabli
 }
 
 
+// Destructure object concept
+const data = {
+    name:'Hari',
+    age:21,
+    designation : 'Software Engineer',
+    language: 'node.js'
+}
+
+const {name,age,salary} = data;
+
+console.log(name);
+console.log(age);
+console.log(salary); // print undefined
+
+
+const {name:FullName,age,salary = 1} = data;
+console.log(FullName)
+
+
+// Destructure object concept with function
+const tramsaction = (type,{name,age})=>{
+    console.log(name,age)
+}
+
+// here calling function throught data and desturcture in function itself
+tramsaction('order',data)
+
+
+// Making https request without library
+const http = require('http');
+const url = dumyUrl = 'http://api.weatherstack.com/current?access_key=0a64e2610865af7f3ce1cd49d4723220&query=40.714,-74.006&unit=f'
+
+const request = http.request(url,(response)=>{
+    let data = '';
+    response.on('data',(chunk)=>{
+        data = data + chunk.toString();
+    });
+
+    response.on('end',()=>{
+        console.log(JSON.parse(data))
+    })
+})
+
+request.on('error',(error)=>{
+    console.log("An error->",error);
+})
+
+request.end();

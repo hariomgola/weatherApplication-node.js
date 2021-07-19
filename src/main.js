@@ -24,13 +24,14 @@ const geoWheatherApi = (locationName) => {
     })
 }
 
-const printJsondata = (data,locationName)=>{
+// Using object destrcturing concept of object
+const printJsondata = ({observation_time,temperature,weather_descriptions,is_day,humidity},locationName)=>{
     console.log(chalk.yellow(`         --- Location : ${locationName} ---        `))
-    console.log(chalk.yellow('   Observation time       - >   ',data.observation_time));
-    console.log(chalk.yellow('   Temperature            - >   ',data.temperature));
-    console.log(chalk.yellow('   Weather Descriptions   - >   ',data.weather_descriptions));
-    console.log(chalk.yellow('   Day                    - >   ',data.is_day));
-    console.log(chalk.yellow('   Humidity               - >   ',data.humidity));
+    console.log(chalk.yellow('   Observation time       - >   ',observation_time));
+    console.log(chalk.yellow('   Temperature            - >   ',temperature));
+    console.log(chalk.yellow('   Weather Descriptions   - >   ',weather_descriptions));
+    console.log(chalk.yellow('   Day                    - >   ',is_day));
+    console.log(chalk.yellow('   Humidity               - >   ',humidity));
 }
 
 module.exports = {
